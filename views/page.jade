@@ -1,0 +1,30 @@
+doctype html
+html
+head
+    link(href='github.css' rel='stylesheet')
+    link(href='bootstrap/dist/css/bootstrap.css' rel='stylesheet')
+    script(src='jquery/dist/jquery.js')
+    script(src='bootstrap/dist/js/bootstrap.js')
+body
+    nav.navbar.navbar-default.navbar-fixed-top
+        div.container
+            div.navbar-header
+                button(type='button' data-toggle='collapse' data-target='#navbar' aria-expanded='false' aria-controls='navbar').navbar-toggle.collapsed
+                    span.sr-only Toggle navigation
+                    each i in new Array(3)
+                        span.icon-bar
+                a.navbar-brand Project Name
+            #navbar.navbar-collapse.collapse
+                ul.nav.navbar-nav.navbar-right
+                    li.dropdown
+                        a(data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false').dropdown-toggle Table of Contents
+                        ul.dropdown-menu
+                            each val in [1, 2, 3]
+                                li
+                                    a(href='#')= val
+
+
+
+    #main_content(style='padding-top: 5vh;').container
+    div.row
+    div.col-md-8.col-md-offset-2!= content
