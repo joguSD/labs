@@ -24,10 +24,10 @@ probably used to doing in a program such as Finder or Windows Explorer.
 ---
 
 # Using the shell
-The shell we will be using in these labs is _bash_ (_b_ourne-_a_gain _sh_ell), however
+The shell we will be using in these labs is __bash__ (__b__ourne-__a__gain __sh__ell), however
 other variations do exist. To begin, right click on the desktop and click 'Open
 in terminal'. Upon logging into the bash shell you will prompted for input with
-the aptly named _prompt_. The _prompt_ is displayed after every executed
+the aptly named __prompt__. The __prompt__ is displayed after every executed
 command as a signal that the shell is ready for another command. A prompt
 typically contains information of the current context and can look something
 like this:
@@ -60,7 +60,7 @@ cs15x
 [cs15x@ieng6-247]:Desktop:517$
 ```
 Excellent! We were able to print out the user's name just like we wanted. To
-continue our analysis of the _prompt_ we'll look at the word between the colons,
+continue our analysis of the __prompt__ we'll look at the word between the colons,
 *Desktop*. This word is the name of the current directory, often called a folder
 in graphical interfaces. Directories contain files and other directories
 composing a tree like structure that creates the overall filesystem. That being
@@ -68,21 +68,21 @@ said just having the name of the directory can be insufficient. What if we want
 to know exactly where and what folder we're currently in the context of?
 
 ### Goal: Get the full path of the current directory
-To do this we will again use a command: `pwd`, which stands for _p_resent
-_w_orking _d_irectory. A common convention is for command names to either
+To do this we will again use a command: `pwd`, which stands for __p__resent
+__w__orking __d__irectory. A common convention is for command names to either
 describe or be an acronym for their functionality. Let's try it out! Type `pwd`
 into the command prompt and it should output something similar to this:
 ```
 /home/linux/ieng6/cs15x/cs15x/Desktop
 ```
-The output given is formatted as a _path_, but how do we read it?
-Let's begin by noting the importance of _/_. A forward slash is used to
-seperate the names of directories that create the _path_. It is important to
-note that a _/_ at the beginning of a file means that it is an _absolute
-path_, or that the path begins from _/_ (read as _root_). In other words,
+The output given is formatted as a __path__, but how do we read it?
+Let's begin by noting the importance of __/__. A forward slash is used to
+seperate the names of directories that create the __path__. It is important to
+note that a __/__ at the beginning of a file means that it is an __absolute
+path__, or that the path begins from __/__ (read as __root__). In other words,
 the path does not depend on the context of the current environment (the current
 directory, user, etc). Using this we can understand the following from the above
-path: Inside of the _root_ directory, there is a directory called *home*, and
+path: Inside of the __root__ directory, there is a directory called *home*, and
 inside of that directory is another called *ieng6* and so on until you reach the
 current directory *Desktop*.
 
@@ -96,17 +96,17 @@ Tools*. You should now get a prompt that looks something like this:
 [cs15x@ieng6-247]:~:25$
 ```
 
-Looking at the prompt we can see that the directory is _~_.
+Looking at the prompt we can see that the directory is __~__.
 Let's check our current directory using `pwd` again.
 ```
 /home/linux/ieng6/cs15x/cs15x
 ```
-As you can see the name displayed in the prompt, _~_, doesn't match the one
+As you can see the name displayed in the prompt, __~__, doesn't match the one
 that pwd gave to us, *cs15x*. This is because our current directory is our
-_home_ directory, or the default directory that a shell will start in. The
+__home__ directory, or the default directory that a shell will start in. The
 directory's name will nearly always match the username and is the point at which
 the user's files begin. Configuration files and other user specific files and
-directories are all located in this folder, the user's _home_.
+directories are all located in this folder, the user's __home__.
 
 Now that we have a pretty good understanding of where we are, and the overall
 structure of the filesystem let's get an idea of what files and directories are
@@ -115,7 +115,7 @@ representing the files and directories in the current directory. How can we get
 the same information on the command line?
 
 ### Goal: View the contents of a directory
-This time we're going to use the command `ls` to _l_i_s_t the contents of a
+This time we're going to use the command `ls` to __l__i__s__t the contents of a
 directory. Upon issuing the `ls` command we should get something like the
 following output:
 ```
