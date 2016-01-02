@@ -3,6 +3,7 @@ html
 head
     link(href='github.css' rel='stylesheet')
     link(href='bootstrap/dist/css/bootstrap.css' rel='stylesheet')
+    link(href='navbarfix.css' rel='stylesheet')
     script(src='jquery/dist/jquery.js')
     script(src='bootstrap/dist/js/bootstrap.js')
 body
@@ -19,9 +20,9 @@ body
                     li.dropdown
                         a(data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false').dropdown-toggle Table of Contents
                         ul.dropdown-menu
-                            each val in [1, 2, 3]
+                            each val in questions
                                 li
-                                    a(href='#')= val
+                                    a(href='#'+val.text.toLowerCase().replace(/[^\w]+/g, '-'))= val.text.split(':')[0]
 
 
 

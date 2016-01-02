@@ -3,7 +3,7 @@ Unix is a family of operating systems that share a common philosophy and follow
 a set of standards. The operating system with the largest install base that
 meets these standards (the Single UNIX Specifications) is Apple's OS X. Linux is
 a popular clone of Unix that is largely compliant with these standards and follows
-the same philosphies as Unix.
+the same philosophies as Unix.
 
 Nearly all of what will be learned in this course will be applicable to both OS X
 and all types of Linux systems although the lab computers are running CentOS a
@@ -28,11 +28,11 @@ probably used to doing in a graphical program such as Finder or Windows Explorer
 The shell is a command line interpreter that provides the user interface to the
 operating system.
 The shell we will be using in these labs is __bash__ (__B__ourne-__a__gain __sh__ell), however
-other variations do exist. Login to a workstating using your CSE 15L course
+other variations do exist. Login to a workstation using your CSE 15L course
 account, named "cs15xyz" where yz are specific to each student. Afterwards, right
 click on the desktop and click 'Open in terminal'.
 The bash shell will prompt you for input with
-the aptly named __comand prompt__, or just __prompt__. The __prompt__ is
+the aptly named __command prompt__, or just __prompt__. The __prompt__ is
 displayed when the shell is ready for the user to input another command. A
 prompt typically contains information of the current context
 and can look something like this:
@@ -54,7 +54,7 @@ brings us to our first task: what is the name of account are we using?
 To achieve this goal we will type a command into the shell. This is the way a
 user asks the computer to run a program.  Each command is a single word, the
 name of the program that runs to execute that command.
-The specific command to determine what user we are is whoami.
+The specific command to determine what user we are is `whoami`.
 Type `whoami` into the prompt so it looks like this:
 
 ```

@@ -1,11 +1,7 @@
 var fs = require('fs');
 var marked = require('marked');
-var express = require('express');
+var jade = require('jade');
 
-var app = express();
-app.use(express.static(__dirname + '/bower_components'));
-app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
 
 marked.setOptions({
     renderer: new marked.Renderer(),
@@ -21,15 +17,26 @@ marked.setOptions({
     }
 });
 
-app.get('/', function (req, res) {
-    fs.readFile('ex.md', 'utf8', function(err, md) {
-        res.render('page.jade', {content: marked(md)});
+fs.readFile('ex.md', 'utf8', function(err, md) {
+    var markdown = marked(md);
+    var tokens = marked.lexer(md);
+    var questions = tokens.filter(function(token){
+        return token.type === 'heading' && token.depth === 4
+    });
+
+    var pageVars = {
+        content: markdown,
+        questions: questions
+    };
+
+    var pageRenderer = jade.compileFile('views/page.jade');
+    var html = pageRenderer(pageVars);
+    fs.writeFile('index.html', html, function(err) {
+        if(err){
+            console.log(err);
+        } else {
+            console.log('done!');
+        }
     });
 });
 
-var server = app.listen(3000, function() {
-    var host = server.address().address;
-    var port = server.address().port;
-
-    console.log('Labs cms running on %s:%s', host,port);
-});
