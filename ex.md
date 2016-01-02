@@ -307,6 +307,11 @@ And the output of `pwd` should be similar to:
 /home/linux/ieng6/cs15x/cs15x24/Lab1
 ```
 
+#### Question 16: Where does the `cd` command go to when given no path in the __command line arguments__?
+
+After issuing the `cd` command by itself, ensure that you're back inside of the
+*Lab1* directory using `pwd`, as shown above.
+
 While we're creating directories let's also cover how to remove a directory that
 was created on accident or is no longer needed. The `rmdir`, __r__e__m__ove
 __dir__ectory command is the complement to `mkdir` and works in the same fashion
@@ -314,7 +319,7 @@ as `mkdir`. Let's test the `rmdir` command by making a new temporary directory
 called *deleteMe* within our *Lab1* directory. Verify that it exists with `ls`.
 Next remove the directory with the `rmdir` command.
 
-#### Question 16: What are the contents of the *Lab1* directory after removing the *deleteMe* directory?
+#### Question 17: What are the contents of the *Lab1* directory after removing the *deleteMe* directory?
 
 Now that we know the commands for creating directories, we can begin looking
 into creating files. Unfortunately, no command's sole purpose is to create a new
@@ -322,19 +327,20 @@ file and there are various ways to create new files, some of which don't involve
 using a command at all. For now, we'll use the `touch` command. Before you use
 the `touch` command to create a new file check the __man page__ on this command.
 
-#### Question 17: What is the actual purpose of the `touch` command?
+#### Question 18: What is the actual purpose of the `touch` command?
 
 You may have also noticed in the man page that if the file argument given to
 `touch` does not exist it will be created empty.
 Use the `touch` command to create a new file in the *Lab1* directory named *temporary*.
 
-#### Question 18: What is the *filesize* of the *temporary* file created with `touch`?
+#### Question 19: What is the *filesize* of the *temporary* file created with `touch`?
 
 Let's try manipulating this newly created file. We can use the `mv` command to
 __m__o__v__e files or directories from one directory to another. The `mv`
 command takes two arguments: the path to a source file and the path to a
 destination file. First create a new directory inside of the *Lab1* directory
 called *names*. Then move the *temporary* file into *names* directory like so:
+
 ```
 [cs15x@ieng6-202]:Lab1:204$ mv temporary names/
 ```
@@ -346,7 +352,7 @@ the tab key to autocomplete the rest of the name, allowing you to quickly and
 easily write pathnames. For example in the above command we could type *te* and
 push tab to complete the name to *temporary*.
 
-#### Question 19: What is the name of the *temporary* file after being moved into the *names* directory?
+#### Question 20: What is the name of the *temporary* file after being moved into the *names* directory?
 
 Notice that in the above `mv` command the destination path only contains a
 directory, in this case the source file will maintain its name after being
@@ -354,14 +360,16 @@ moved. However, we can also specify a new name for the file in the destination
 path, allowing us to also use the `mv` command to rename files. Use `mv` to
 rename the *temporary* file now inside of the *names* directory to your name.
 
-#### Question 20: What is the full command used to rename the *temporary* file inside of the *names* directory?
+#### Question 21: What is the full command used to rename the *temporary* file inside of the *names* directory?
 
 After renaming the *temporary* file the contents of the *names* directory should
 be similar to this:
+
 ```
 [cs15x@ieng6-202]:Lab1:211$ ls names
 jordan
 ```
+
 Where *jordan* is replaced with your name.
 Now let's create another file in the *names* directory with your partner's name.
 To achieve this we're going to use the `cp` command, which allows us to
@@ -371,23 +379,28 @@ that the `cp` command will keep the original file as well. Using the `cp`
 command make a copy of the file named after you, named after your partner.
 
 The *names* directory should now look like this:
+
 ```
 [cs15x@ieng6-202]:Lab1:218$ ls names/
 gary  jordan
 ```
+
 Where *gary* and *jordan* are replaced with you and your partner's name.
 
-#### Question 21: What is the full `cp` command used to achieve the above results?
+#### Question 22: What is the full `cp` command used to achieve the above results?
 
 We can also use the `cp` command to copy directories as well. Let's make a copy
 of the *names* directory named *names.bak*. To make `cp` copy directories we
 need to pass the *-r* __option__ so `cp` knows to copy __r__ecursively.
 The full command will look like this:
+
 ```
 [cs15x@ieng6-202]:Lab1:226$ cp -r names/ names.bak
 ```
+
 And the *names.bak* folder should contain both files just like the *names*
 folder:
+
 ```
 [cs15x@ieng6-202]:Lab1:245$ ls names
 gary  jordan
@@ -399,23 +412,24 @@ Much like the `rmdir` command we can use the `rm` command to __r__e__m__ove
 files. The `rm` command takes one or many paths that are to be removed. Using
 the `rm` command, remove one of the files inside the *names* directory.
 
-#### Question 22: What is the full `rm` command used to remove one of the files?
+#### Question 23: What is the full `rm` command used to remove one of the files?
 
 What if we wanted to remove the entire *names* directory and all of its
 contents? One might be tempted to try the `rmdir` command as we are trying to
 remove a directory.
 
-#### Question 23: What does the `rmdir` command output if you try to remove the *names* directory while it still has a file in it?
+#### Question 24: What does the `rmdir` command output if you try to remove the *names* directory while it still has a file in it?
 
 It should now be clear that we cannot use the `rmdir` command to delete
 directories that still have contents inside of them. We'll actually need to use
 the `rm` command for this. Using the `rm` command remove the *names* directory
 and all of its contents.
 
-#### Question 24: What __option__ needs to be passed to `rm` for it to *recursively* remove the *names* directory and all contents?
+#### Question 25: What __option__ needs to be passed to `rm` for it to *recursively* remove the *names* directory and all contents?
 
 After removing the *names* directory we should now just be left with *names.bak*
 directory:
+
 ```
 [cs15x@ieng6-202]:Lab1:255$ ls
 names.bak
@@ -428,6 +442,21 @@ that will tell new users to Unix to do things like `rm -rf /`. Such commands are
 extremely dangerous and can be destructive to a system. It's important to be
 careful when getting help from the internet, if a command seems fishy double
 check its functionality before running it.
+
+We've now covered all of the basic filesystem manipulations via the command line
+and nearly anything you could do with a graphical interface such as Finder or
+Windows Explorer, you should now be able to do from the __bash shell__!
+
+
+
+
+
+
+
+
+
+
+
 
 
 
